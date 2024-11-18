@@ -5,12 +5,20 @@ public class Main
   public static void main(String[] args)
   {
     System.out.println(countProperContains("bada bada bada the badaboom the bobadabo baby", "bada"));
+    System.out.println(countSub("gagagigo the risen", "ga"));
+    System.out.println(deleteSub("gagagigo the giga Risen", "gig"));
   }
 
   public static int countSub(String word, String target)
   {
     int targetLength = target.length();
-    return 0;
+    int count = 0;
+    for (int i = 0; i < word.length() - targetLength + 1; i++) {
+      if (target.equals(word.substring(i, i + targetLength))) {
+        count++;
+      }
+    }
+    return count;
   }
 
   public static int countProperContains(String word, String target)
@@ -32,6 +40,10 @@ public class Main
 
   public static String deleteSub(String word, String target)
   {
-    return null;
+    while (word.indexOf(target) != -1) {
+      int index = word.indexOf(target);
+      word = word.substring(0, index) + word.substring(index + target.length());
+    }
+    return word;
   }
 }
