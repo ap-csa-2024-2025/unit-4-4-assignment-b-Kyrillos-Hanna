@@ -4,8 +4,24 @@ public class Main
 {
   public static void main(String[] args)
   {
-    System.out.println(countProperContains("bada bada bada the badaboom the bobadabo baby", "bada"));
-    System.out.println(countSub("gagagigo the risen", "ga"));
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Input word: ");
+    String input1 = sc.nextLine();
+    System.out.println("Input target: ");
+    String input2 = sc.nextLine();
+    System.out.println("The substring " + input2 + " appears " + countSub(input1, input2) + " times.");
+
+    System.out.println("Input word: ");
+    String input3 = sc.nextLine();
+    System.out.println("Input target: ");
+    String input4 = sc.nextLine();  
+    System.out.println("The substring " + input4 + " is properly contained " + countProperContains(input3, input4) + " times.");
+
+    System.out.println("Input word: ");
+    String input5 = sc.nextLine();
+    System.out.println("Input target: ");
+    String input6 = sc.nextLine();   
+    System.out.println("New String "); 
     System.out.println(deleteSub("gagagigo the giga Risen", "gig"));
   }
 
